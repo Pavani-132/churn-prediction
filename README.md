@@ -1,47 +1,69 @@
-# Bank Customer Churn Prediction 📉
+```markdown
+# Customer Churn Prediction
 
-## Project Goal
-[cite_start]The primary objective of this project is to analyze bank customer demographics and financial data to **predict whether a customer will leave the bank (churn)**[cite: 4]. [cite_start]By building a highly predictive machine learning model, the bank can proactively identify at-risk customers and implement targeted retention strategies[cite: 4, 323].
+This repository contains a machine learning project for predicting customer churn.  
+The notebook explores data preprocessing, feature engineering, model training, and evaluation using different algorithms to identify customers who are likely to leave a service.
 
-## 💾 Dataset Overview
+## 📂 Project Structure
+```
 
-[cite_start]The dataset, sourced from Kaggle, contains 10,000 rows and 14 columns of bank customer information[cite: 6]. [cite_start]The analysis focuses on customer age, gender, country, credit score, balance, and other financial variables[cite: 4].
+├── Customer Churn Prediction.ipynb   # Jupyter Notebook with full implementation
+├── README.md                         # Project documentation
+└── requirements.txt                  # Dependencies (to be created)
 
-| Column Name | Description | Data Type (after preprocessing) |
-| :--- | :--- | :--- |
-| `CreditScore` | Credit score of the customer | `float64` (Scaled) |
-| `Geography` | Country of the customer | `int64` (Encoded) |
-| `Gender` | Gender of the customer | `int64` (Encoded) |
-| `Age` | Age of the customer | `int64` |
-| `Tenure` | Number of years with the bank | `int64` |
-| `Balance` | Bank balance of the customer | `float64` (Scaled) |
-| `NumOfProducts` | Number of bank products the customer uses | `int64` |
-| `HasCrCard` | Binary flag (1: yes, 0: no) | `int64` |
-| `IsActiveMember` | Binary flag (1: active, 0: non-active) | `int64` |
-| `EstimatedSalary` | Estimated salary in Dollars | `float64` (Scaled) |
-| **`Churn`** | **Target Variable**: 1 if the customer closed account, 0 if retained | `int64` |
+````
 
----
+## 🚀 Features
+- Data cleaning and preprocessing
+- Exploratory Data Analysis (EDA) with visualizations
+- Feature engineering and encoding
+- Model training with multiple classifiers
+- Performance evaluation (accuracy, precision, recall, F1-score, ROC-AUC)
 
-## 🔬 Exploratory Data Analysis (EDA) & Key Findings
+## 🛠️ Installation
+Clone the repository and install dependencies:
 
-The initial analysis revealed critical insights into customer attrition factors:
+```bash
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+pip install -r requirements.txt
+````
 
-* [cite_start]**Imbalance**: Only **20.37%** of customers churned, while 79.63% were retained[cite: 101, 104].
-* [cite_start]**Age is Significant**: Churn count is highest for customers in the **40-50 age group**[cite: 165, 166].
-* [cite_start]**Geography is a Factor**: **German customers** are inferred to be more likely to churn than those from France or Spain[cite: 218, 219].
-* [cite_start]**Products are Crucial**: Customers with **3 or 4 products** show a much higher churn count relative to non-leaving customers in that category, making this a strong churn indicator[cite: 309, 310].
-* [cite_start]**Activity Status**: Churn count is predictably **higher for non-active members**[cite: 321]. [cite_start]The bank should focus on retaining these non-active customers[cite: 323].
-* [cite_start]**Tenure**: Customers with very high tenure (more than 9 years) count for the least churn, showing loyalty, while those with **1-9 years tenure** have higher churn counts[cite: 251, 252, 253].
-* [cite_start]**Credit Score & Salary**: Both the Credit Score and Estimated Salary were found to be **not a good indicator or predictor of churn**, as their distributions were similar across churned and non-churned groups[cite: 195, 327, 328].
+## ▶️ Usage
 
----
+Run the Jupyter Notebook:
 
-## 🧹 Data Preprocessing & Feature Engineering
+```bash
+jupyter notebook "Customer Churn Prediction.ipynb"
+```
 
-1.  [cite_start]**Column Management**: The columns `RowNumber`, `CustomerId`, and `Surname` were dropped as they are unnecessary for the prediction model[cite: 28]. [cite_start]The target column `Exited` was renamed to `Churn`[cite: 71, 73].
-2.  [cite_start]**Missing Values**: No missing values were found [cite: 34-55].
-3.  [cite_start]**Encoding**: Categorical variables (`Geography`, `Gender`) were converted into numerical format using `LabelEncoder`[cite: 329].
-4.  [cite_start]**Scaling**: Continuous variables (`CreditScore`, `Balance`, `EstimatedSalary`) were normalized using `StandardScaler` to ensure features contribute equally to the model training[cite: 329].
+## 📊 Models Used
 
+* Logistic Regression
+* Decision Tree
+* Random Forest
+* Support Vector Machine (SVM)
+* Gradient Boosting
 
+## 📈 Evaluation Metrics
+
+* Accuracy
+* Precision
+* Recall
+* F1-Score
+* ROC-AUC
+
+## 🔮 Results
+
+The models are compared, and the best-performing one is highlighted in the notebook.
+
+## 🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+```
+```
