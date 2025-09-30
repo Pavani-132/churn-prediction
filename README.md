@@ -44,16 +44,4 @@ The initial analysis revealed critical insights into customer attrition factors:
 3.  [cite_start]**Encoding**: Categorical variables (`Geography`, `Gender`) were converted into numerical format using `LabelEncoder`[cite: 329].
 4.  [cite_start]**Scaling**: Continuous variables (`CreditScore`, `Balance`, `EstimatedSalary`) were normalized using `StandardScaler` to ensure features contribute equally to the model training[cite: 329].
 
-```python
-from sklearn.preprocessing import LabelEncoder, StandardScaler
 
-# Label Encoding
-variables = ['Geography','Gender']
-le = LabelEncoder()
-for i in variables:
-    le.fit(df[i].unique())
-    df[i] = le.transform(df[i])
-
-# Normalization
-scaler = StandardScaler()
-df[['CreditScore','Balance','EstimatedSalary']] = scaler.fit_transform(df[['CreditScore','Balance','EstimatedSalary']])
